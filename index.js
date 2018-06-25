@@ -14,7 +14,7 @@ app.get('*', (req, res) => {
 
 const options = {
   key: fs.readFileSync('/var/certs/lrndev.key'),
-  cert:  fs.readFileSync('/var/certs/lrndev.crt')
+  cert: fs.readFileSync('/var/certs/lrndev.crt')
 }
 
 spdy
