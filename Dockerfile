@@ -18,3 +18,4 @@ COPY . .
 USER root
 RUN chown -R node:node /home/node/html
 USER node
+EXPOSE 3000

@@ -7,6 +7,11 @@ services:
       - certs:/var/certs
       - .:/home/node/html
       - /home/node/html/node_modules
+    depends_on:
+      - openssl
+    ports:
+      - 3000:3000
+    command: ['npm', 'start']
 
   openssl:
     image: centurylink/openssl
