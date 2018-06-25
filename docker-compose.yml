@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  app:
+    build: ./
+    volumes:
+      - certs:/var/certs
+      - .:/home/node/html
+      - /home/node/html/node_modules
+
+  openssl:
+    image: centurylink/openssl
+    volumes:
+      - certs:/certs
+    environment:
+      - COMMON_NAME=lrncdn
+      - KEY_NAME=lrndev
+
+volumes:
+  certs:
