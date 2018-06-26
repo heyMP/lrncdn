@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  app:
+    volumes:
+      - certs:/var/certs
+    depends_on:
+      - openssl
+    command: ['npm', 'start']
+
+  openssl:
+    image: centurylink/openssl
+    volumes:
+      - certs:/certs
+    environment:
+      - COMMON_NAME=lrncdn
+      - KEY_NAME=lrndev
+
+volumes:
+  certs:
